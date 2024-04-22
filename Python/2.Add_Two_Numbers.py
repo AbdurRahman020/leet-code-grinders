@@ -26,11 +26,9 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    
     l1 = ListNode(2, ListNode(4, ListNode(3)))
     l2 = ListNode(5, ListNode(6, ListNode(4)))
     print(s.addTwoNumbers(l1, l2))
-    
     l1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9))))))
     l2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
     print(s.addTwoNumbers(l1, l2))
