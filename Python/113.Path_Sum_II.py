@@ -28,8 +28,7 @@ class Solution:
                     # if yes, add the current path to the list of all_paths
                     all_paths.append(path)
         
-        # start the depth-first search from the root node with the initial path 
-        # containing only the root value
+        # start the depth-first search from the root node with the initial path containing only the root value
         dfs(root, [root.val])
         # return all the paths that satisfy the condition
         return all_paths

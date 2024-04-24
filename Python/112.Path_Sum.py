@@ -7,17 +7,21 @@ class TreeNode:
 class Solution:
     def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
         def dfs(node, curr_sum):
+            # base case: if the node is None, return False
             if not node:
                 return False
-            
+            # update current sum by adding the value of the current node
             curr_sum += node.val
+            # if the current node is a leaf node, check if the current sum equals the target sum
             if not node.left and not node.right:
                 return curr_sum == targetSum
+            # recursively call dfs for left and right children
             return dfs(node.left, curr_sum) or dfs(node.right, curr_sum)
         
+        # base case: (an empty tree) if root is None, return None
         if not root:
             return None
-        
+        # start the depth-first search from the root with initial sum 0
         return dfs(root, 0)
 
 if __name__ == '__main__':
