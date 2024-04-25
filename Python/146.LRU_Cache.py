@@ -20,7 +20,7 @@ class LRUCache:
         return self.cache[key]
 
     def put(self, key: int, value: int) -> None:
-        # insert or update the value associated with the given key in the cache.
+        # insert or update the value associated with the given key in the cache
         # if the key is already present, update its value and move it to the end to indicate
         # it was recently used
         # if the key is not present and the cache is full, remove the least recently used 
