@@ -18,6 +18,7 @@ class Solution(object):
         # check for overflow conditions
         if int_reversed > 2**31 - 1 or int_reversed < -2**31:
             return 0
+        
         # return the reversed integer
         return int_reversed
 
