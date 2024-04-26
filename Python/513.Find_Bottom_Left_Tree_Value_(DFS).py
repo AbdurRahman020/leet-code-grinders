@@ -7,38 +7,24 @@ class TreeNode(object):
 class Solution:
     def findBottomLeftValue(self, root: TreeNode) -> int:
         def dfs(root, depth):
+            # base case: if the root is None, return 0 depth and 0 value
             if not root:
                 return 0, 0
-
+            
+            # recursive calls to the left children
             left = dfs(root.left, depth + 1)
+            # recursive calls to the right children
             right = dfs(root.right, depth + 1)
-
+            
+            # determine the leftmost node at the bottom level
             if left[1] == 0 and right[1] == 0:
                 return root.val, depth
             if left[1] < right[1]:
                 return right
             return left
-
-        return dfs(root, 0)[0]
-
-'''
-        # BFS
         
-        left = 0
-        q = deque([root])
-
-        while q:
-            for i in range(len(q)):
-                curr = q.popleft()
-                if i == 0:
-                    last = curr.val
-                if curr.left:
-                    q.append(curr.left)
-                if curr.right:
-                    q.append(curr.right)
-
-        return left
-'''
+        # start the depth-first search from the root with a depth of 0
+        return dfs(root, 0)[0]
 
 if __name__ == '__main__':
     s = Solution()
