@@ -6,10 +6,13 @@ class TreeNode(object):
 
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        # check if both trees are empty, indicating equality
         if not p and not q:
             return True
+        # check if either tree is empty, indicating inequality
         if not p or not q:
             return False
+        # check if current nodes have equal values and recursively check left and right subtrees
         return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 if __name__ == '__main__':

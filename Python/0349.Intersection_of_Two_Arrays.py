@@ -1,5 +1,7 @@
 class Solution(object):
     def intersection(self, nums1: list[int], nums2: list[int]) -> list[int]:
+        # convert both lists to sets to find the intersection (common elements)
+        # after intersection convert the result back to a list
         return list(set(nums1).intersection(set(nums2)))
 
 if __name__ == '__main__':
