@@ -8,6 +8,14 @@ class TreeNode(object):
         
 class Solution:
     def findBottomLeftValue(self, root: TreeNode) -> int:
+        """
+        Finds the value of the leftmost node at the bottom level of a binary tree.
+
+        :param root: The root of the binary tree.
+        :type root: TreeNode
+        :return: The value of the leftmost node at the bottom level.
+        :rtype: int
+        """
         # check if the root is empty
         if not root:
             return True
