@@ -1,5 +1,18 @@
 class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
+        """
+        Reverses the substring of the word starting from the beginning and ending with the first occurrence of the specified character.
+        
+        If the character 'ch' is not found in the word, the original word is returned.
+        
+        :param word: The input word.
+        :type word: str
+        :param ch: The character marking the end of the substring to be reversed.
+        :type ch: str
+        
+        :return: The word with the substring reversed if 'ch' is found, otherwise the original word.
+        :rtype: str
+        """
         # initialize two pointers, i and j, to 0
         i, j = 0, 0
         # iterate through the characters of the word

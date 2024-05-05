@@ -1,5 +1,18 @@
 class Solution:
     def minFallingPathSum(self, grid: list[list[int]]) -> int:
+        """
+        Calculates the minimum falling path sum in a grid.
+        
+        Given a grid of integers, where each number represents the cost of landing
+        in that cell, this method finds the minimum possible falling path sum starting
+        from any cell in the first row and ending in any cell in the last row.
+                    
+        :param grid: A 2D list of integers representing the grid.
+        :type grid: list[list[int]]
+        
+        :return: The minimum falling path sum in the grid.
+        :rtype: int
+        """
         # Get the dimensions of the grid
         row_length, col_length = len(grid), len(grid[0])
         

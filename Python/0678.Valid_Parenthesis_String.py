@@ -1,5 +1,27 @@
 class Solution:
     def checkValidString(self, s: str) -> bool:
+        """
+        Checks if the given string is a valid string according to the defined rules.
+        
+        This method checks whether the given string is a valid string, where each character 
+        can be one of the following:
+        - '(' : Represents an opening bracket.
+        - ')' : Represents a closing bracket.
+        - '*' : Represents a stack that can be used as a substitute for either an opening 
+               or a closing bracket.
+        
+        The rules for a valid string are as follows:
+        1. Each opening bracket '(' must have a corresponding closing bracket ')'.
+        2. Each closing bracket ')' must have a corresponding opening bracket '('.
+        3. '*' can be used as a substitute for either an opening or a closing bracket.
+        4. The '*' character cannot be used as a substitute for both opening and closing brackets.
+        
+        :param s: The string to be checked for validity.
+        :type s: str
+        
+        :return: True if the string is valid, False otherwise.
+        :rtype: bool
+        """
         # lists to keep track of indices of opening brackets and stack
         bracket, stack = [], []
         
