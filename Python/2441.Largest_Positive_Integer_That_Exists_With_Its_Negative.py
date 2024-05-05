@@ -1,18 +1,5 @@
 class Solution:
     def findMaxK(self, nums: list[int]) -> int:
-        """
-        Finds the maximum integer in the input list such that its sum with another integer in the list equals 0.
-        
-        This method sorts the input list of integers and then iterates through it with two pointers,
-        one starting from the beginning and the other starting from the end. It moves the pointers towards each other
-        and returns the maximum integer found such that its sum with another integer in the list equals 0.
-        
-        :param nums: A list of integers.
-        :type nums: list[int]
-        
-        :return: The maximum integer in the list such that its sum with another integer in the list equals 0.
-        :rtype: int
-        """
         # sort the input list
         nums.sort()
         # initialize two pointers, i and j, at the beginning and end of the list respectively

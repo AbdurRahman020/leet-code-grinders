@@ -1,17 +1,5 @@
 class Solution:
     def wonderfulSubstrings(self, word: str) -> int:
-        """
-        Counts the number of wonderful substrings in the given word.
-        
-        A wonderful substring is a substring where all characters occur an even number of times, 
-        except for at most one character that can occur an odd number of times.
-        
-        :param word: The input word.
-        :type word: str
-        
-        :return: The count of wonderful substrings in the word.
-        :rtype: int
-        """
         # initialize an array to store counts of different bit masks 
         # and set bit mask '0' to 1
         mask_count = [1] + [0] * 1024

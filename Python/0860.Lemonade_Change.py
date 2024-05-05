@@ -1,18 +1,5 @@
 class Solution:
     def lemonadeChange(self, bills: list[int]) -> bool:
-        """
-        Determines if it's possible to provide correct change to all customers.
-
-        This method simulates providing change to customers at a lemonade stand. It tracks the available $5 and $10
-        bills to ensure that correct change can be given for each transaction. If at any point the stand cannot provide
-        change for a customer, the method returns False; otherwise, it returns True.
-
-        :param bills: A list of integers representing the denominations of bills paid by customers.
-        :type bills: list[int]
-
-        :return: True if it's possible to provide correct change to all customers, False otherwise.
-        :rtype: bool
-        """
         # initialize variables to keep track of available change
         available_5, available_10 = 0, 0
         # iterate through each bill in the list

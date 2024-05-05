@@ -1,18 +1,5 @@
 class Solution:
     def minFallingPathSum(self, matrix: list[list[int]]) -> int:
-        """
-        Calculates the minimum falling path sum in a matrix.
-        
-        Given a matrix of integers, where each number represents the cost of landing
-        in that cell, this method finds the minimum possible falling path sum starting
-        from any cell in the first row and ending in any cell in the last row.
-        
-        :param matrix: A 2D list of integers representing the matrix.
-        :type matrix: list[list[int]]
-        
-        :return: The minimum falling path sum in the matrix.
-        :rtype: int
-        """
         # get the dimensions of the matrix
         row_length, col_length = len(matrix), len(matrix[0])
         

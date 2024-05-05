@@ -2,21 +2,6 @@ from collections import deque
 
 class Solution:
     def openLock(self, deadends: list[str], target: str) -> int:
-        """
-        Finds the minimum number of turns required to reach the target combination.
-
-        This method simulates the process of opening a combination lock using a breadth-first search (BFS) approach.
-        It explores all possible combinations starting from the initial state '0000' until it reaches the target state,
-        avoiding the deadends specified. Each turn involves changing one digit at a time either clockwise or counterclockwise.
-
-        :param deadends: A list of strings representing combinations that are unreachable.
-        :type deadends: list[str]
-        :param target: The target combination to reach.
-        :type target: str
-
-        :return: The minimum number of turns required to reach the target combination. If the target cannot be reached, returns -1.
-        :rtype: int
-        """
         # convert deadends list to a set for faster lookup
         dead_ends_set = set(deadends)
         # initialize a queue for BFS traversal

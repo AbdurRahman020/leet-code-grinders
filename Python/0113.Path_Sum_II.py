@@ -6,17 +6,6 @@ class TreeNode:
 
 class Solution:
     def pathSum(self, root: TreeNode, targetSum: int) -> list[list[int]]:
-        """
-        Find all root-to-leaf paths in a binary tree where each path's sum equals the given target sum.
-        
-        :param root: The root of the binary tree.
-        :type root: TreeNode
-        :param targetSum: The target sum.
-        :type targetSum: int
-        
-        :return: A list of all root-to-leaf paths with sum equal to the target sum.
-        :rtype: list[list[int]]
-        """
         # base case: if the root is None, return an empty list
         if not root:
             return root

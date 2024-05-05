@@ -1,18 +1,5 @@
 class Solution:
     def countOdds(self, low: int, high: int) -> int:
-        """
-        Counts the number of odd integers between a given range [low, high].
-        
-        This method calculates the number of odd integers between the specified range (inclusive).
-        
-        :param low: The lower bound of the range.
-        :type low: int
-        :param high: The upper bound of the range.
-        :type high: int
-        
-        :return: The count of odd numbers within the given range [low, high].
-        :rtype: int
-        """
         # calculate the number of odd integers between low and high (inclusive)
         # since the difference between any two consecutive odd numbers is 2,
         # we can simply count the number of multiples of 2 within the range (high - low).

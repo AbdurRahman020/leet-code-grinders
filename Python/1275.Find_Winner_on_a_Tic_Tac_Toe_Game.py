@@ -1,16 +1,5 @@
 class Solution:
     def tictactoe(self, moves: list[list[int]]) -> str:
-        """
-        Determines the outcome of a tic-tac-toe game given a sequence of moves.
-        
-        :param moves: A list of moves where each move is represented by a list of two 
-                      integers, indicating the row and column where the move was made.
-        :type moves: list[list[int]]
-        
-        :return: 'A' if player A wins, 'B' if player B wins, 'Draw' if the game is a 
-                 draw, and 'Pending' if the game has not ended yet.
-        :rtype: str
-        """
         # initialize lists to track moves for players A and B
         a, b = [0]*8, [0]*8
         

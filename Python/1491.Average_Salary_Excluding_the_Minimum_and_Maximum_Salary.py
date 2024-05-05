@@ -1,17 +1,5 @@
 class Solution:
     def average(self, salary: list[int]) -> float:
-        """
-        Calculates the average salary excluding the lowest and highest salaries.
-        
-        This method calculates the average salary of a list of salaries, excluding
-        the lowest and highest salaries in the list.
-        
-        :param salary: A list of integers representing the salaries.
-        :type salary: list[int]
-        
-        :return: The average salary excluding the lowest and highest salaries.
-        :rtype: float
-        """
         # sort the list of salaries in ascending order
         salary.sort()
         # initialize the sum of salaries.

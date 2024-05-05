@@ -2,23 +2,6 @@ from collections import defaultdict
 
 class Solution:
     def sumOfDistancesInTree(self, n: int, edges: list[list[int]]) -> list[int]:
-        """
-        Computes the sum of distances from each node to all other nodes in the tree.
-        
-        This method calculates the sum of distances from each node to all other nodes in the tree
-        represented by the given number of nodes and edges. It employs a two-pass Depth-First Search (DFS)
-        algorithm to compute the subtree sizes and depths of nodes, followed by a second pass to calculate
-        the sum of distances for each node.
-        
-        :param n: The number of nodes in the tree.
-        :type n: int
-        :param edges: A list of lists representing edges between nodes in the tree.
-                      Each sublist contains two integers representing an edge between two nodes.
-        :type edges: list[list[int]]
-        
-        :return: A list containing the sum of distances from each node to all other nodes in the tree.
-        :rtype: list[int]
-        """
         # graph construction
         graph = defaultdict(list)
         for u, v in edges:

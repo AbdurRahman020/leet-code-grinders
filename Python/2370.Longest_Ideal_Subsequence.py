@@ -1,18 +1,5 @@
 class Solution:
     def longestIdealString(self, s: str, k: int) -> int:
-        """
-        Finds the length of the longest ideal substring in the given string.
-        
-        An ideal substring is defined as a substring in which no character occurs more than k times.
-        
-        :param s: The input string.
-        :type s: str
-        :param k: The maximum number of occurrences allowed for any character in an ideal substring.
-        :type k: int
-        
-        :return: The length of the longest ideal substring.
-        :rtype: int
-        """
         # initialize a list to keep track of the length of the longest ideal substring ending at 
         # each character position
         ideal_sub_string = [0]*26

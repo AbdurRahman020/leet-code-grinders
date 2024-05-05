@@ -6,9 +6,6 @@ class TreeNode:
 
 class Solution:
     def recoverTree(self, root: TreeNode) -> None:
-        """
-        Do not return anything, modify root in-place instead.
-        """
         result = []
         def Inorder(root):
             if root != None:

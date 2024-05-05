@@ -1,19 +1,5 @@
 class Solution:
     def numRescueBoats(self, people: list[int], limit: int) -> int:
-        """
-        Calculates the minimum number of boats needed to rescue people.
-
-        Given a list of people's weights and the maximum weight limit a boat can carry,
-        this method determines the minimum number of boats needed to rescue all people.
-
-        :param people: A list of integers representing the weights of people to be rescued.
-        :type people: list[int]
-        :param limit: The maximum weight limit a boat can carry.
-        :type limit: int
-
-        :return: The minimum number of boats needed to rescue all people.
-        :rtype: int
-        """
         # sort the list of people in non-decreasing order of their weights
         people.sort()
         # initialize the number of boats needed

@@ -1,14 +1,5 @@
 class Solution(object):
     def romanToInt(self, s: str) -> int:
-        """
-        Converts a Roman numeral to an integer.
-
-        :param s: The Roman numeral to be converted.
-        :type s: str
-        
-        :return: The integer representation of the Roman numeral.
-        :rtype: int
-        """
         # dictionary to map each roman numeral to its corresponding integer value
         roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
         # variable to store the total integer value of the Roman numeral
