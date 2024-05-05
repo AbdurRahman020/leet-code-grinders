@@ -1,5 +1,13 @@
 class Solution(object):
     def reverse(self, x: int) -> int:
+        """
+        Reverses the digits of an integer.
+
+        :param x: The integer to be reversed.
+        :type x: int
+        :return: The reversed integer.
+        :rtype: int
+        """
         # initialize a variable to store the reversed integer
         int_reversed = 0
         # check if the input number is non-negative

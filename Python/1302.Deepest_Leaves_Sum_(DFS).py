@@ -7,7 +7,15 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def deepestLeavesSum(self, root: TreeNode) -> int:     
+    def deepestLeavesSum(self, root: TreeNode) -> int:
+        """
+        Calculates the sum of values of the deepest leaves in a binary tree.
+        
+        :param root: The root of the binary tree.
+        :type root: TreeNode
+        :return: The sum of values of the deepest leaves.
+        :rtype: int
+        """
         # initialize a dictionary to store the sum of node values at each depth
         leaves_sum = defaultdict(int)
         
