@@ -13,6 +13,7 @@ class Solution:
         
         :param root: The root of the binary tree.
         :type root: TreeNode
+        
         :return: The sum of values of the deepest leaves.
         :rtype: int
         """

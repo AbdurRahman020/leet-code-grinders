@@ -5,6 +5,7 @@ class Solution(object):
 
         :param x: The integer to be reversed.
         :type x: int
+        
         :return: The reversed integer.
         :rtype: int
         """

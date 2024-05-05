@@ -7,7 +7,9 @@ class Solution(object):
         :type nums: list[int]
         :param target: The target sum.
         :type target: int
-        :return: A list containing the indices of the two numbers in the input list that sum up to the target.
+        
+        :return: A list containing the indices of the two numbers in the input 
+                 list that sum up to the target.
         :rtype: list[int]
         """
         # dictionary to memoize elements already checked along with their indices

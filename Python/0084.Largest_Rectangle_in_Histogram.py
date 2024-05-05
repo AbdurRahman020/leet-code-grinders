@@ -1,5 +1,18 @@
 class Solution:
     def largestRectangleArea(self, heights: list[int]) -> int:
+        """
+        Calculates the area of the largest rectangle that can be formed from the given heights.
+
+        This method implements the algorithm to find the largest rectangle area in a histogram. 
+        It utilizes a stack to efficiently find the maximum area by keeping track of the heights 
+        and their indices.
+
+        :param heights: A list of integers representing the heights of bars in a histogram.
+        :type heights: list[int]
+        
+        :return: The area of the largest rectangle that can be formed.
+        :rtype: int
+        """
         # initialize variables to store maximum area and a stack to track heights and their indices
         max_area, stack = 0, [(0,0)]
         # add a sentinel to the end of the heights list to ensure all heights are processed

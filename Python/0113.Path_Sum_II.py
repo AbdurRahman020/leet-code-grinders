@@ -13,6 +13,7 @@ class Solution:
         :type root: TreeNode
         :param targetSum: The target sum.
         :type targetSum: int
+        
         :return: A list of all root-to-leaf paths with sum equal to the target sum.
         :rtype: list[list[int]]
         """

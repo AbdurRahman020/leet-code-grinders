@@ -12,6 +12,7 @@ class Solution(object):
         :type s: str
         :param t: The second string.
         :type t: str
+        
         :return: True if s and t are anagrams, False otherwise.
         :rtype: bool
         """

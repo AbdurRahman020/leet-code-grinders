@@ -10,6 +10,7 @@ class Solution:
         :type nums: list[int]
         :param k: The target XOR value.
         :type k: int
+        
         :return: The minimum number of operations.
         :rtype: int
         """

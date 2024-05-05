@@ -5,6 +5,7 @@ class Solution(object):
 
         :param s: The Roman numeral to be converted.
         :type s: str
+        
         :return: The integer representation of the Roman numeral.
         :rtype: int
         """
