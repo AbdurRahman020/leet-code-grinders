@@ -1,7 +1,18 @@
+from typing import Optional, List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+    
+    def to_list(self) -> List[int]:
+        """Convert the linked list to a Python list"""
+        result: List[int] = []
+        curr: Optional['ListNode'] = self
+        while curr:
+            result.append(curr.val)
+            curr = curr.next
+        return result
         
 class Solution:
     def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
@@ -25,9 +36,8 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    
     l1 = ListNode(1, ListNode(2, ListNode(4)))
     l2 = ListNode(1, ListNode(3, ListNode(4)))
-    print(s.mergeTwoLists(l1, l2))
-    print(s.mergeTwoLists(ListNode(), ListNode(0)))
-    print(s.mergeTwoLists(ListNode(), ListNode()))    
+    print(s.mergeTwoLists(l1, l2).to_list())
+    print(s.mergeTwoLists(ListNode(), ListNode(0)).to_list())
+    print(s.mergeTwoLists(ListNode(), ListNode()).to_list())    

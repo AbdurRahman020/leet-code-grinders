@@ -1,7 +1,18 @@
+from typing import Optional, List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+    
+    def to_list(self) -> List[int]:
+        """Convert the linked list to a Python list"""
+        result: List[int] = []
+        curr: Optional['ListNode'] = self
+        while curr:
+            result.append(curr.val)
+            curr = curr.next
+        return result
         
 class Solution:
     def doubleIt(self, head: ListNode) -> ListNode:
@@ -41,5 +52,5 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.doubleIt(ListNode(1, ListNode(8, ListNode(9)))))
-    print(s.doubleIt(ListNode(9, ListNode(9, ListNode(9)))))
+    print(s.doubleIt(ListNode(1, ListNode(8, ListNode(9)))).to_list())
+    print(s.doubleIt(ListNode(9, ListNode(9, ListNode(9)))).to_list())

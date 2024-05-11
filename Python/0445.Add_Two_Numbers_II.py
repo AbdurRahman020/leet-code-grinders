@@ -1,7 +1,18 @@
+from typing import Optional, List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+        
+    def to_list(self) -> List[int]:
+        """Convert the linked list to a Python list"""
+        result: List[int] = []
+        curr: Optional['ListNode'] = self
+        while curr:
+            result.append(curr.val)
+            curr = curr.next
+        return result
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -39,6 +50,6 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.addTwoNumbers(ListNode(7, ListNode(2, ListNode(4, ListNode(3)))), ListNode(5, ListNode(6, ListNode(4)))))
-    print(s.addTwoNumbers(ListNode(2, ListNode(4, ListNode(3))), ListNode(5, ListNode(6, ListNode(4)))))
-    print(s.addTwoNumbers(ListNode(), ListNode()))
+    print(s.addTwoNumbers(ListNode(7, ListNode(2, ListNode(4, ListNode(3)))), ListNode(5, ListNode(6, ListNode(4)))).to_list())
+    print(s.addTwoNumbers(ListNode(2, ListNode(4, ListNode(3))), ListNode(5, ListNode(6, ListNode(4)))).to_list())
+    print(s.addTwoNumbers(ListNode(), ListNode()).to_list())

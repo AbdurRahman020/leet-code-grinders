@@ -1,7 +1,18 @@
+from typing import Optional, List
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+    
+    def to_list(self) -> List[int]:
+        """Convert the linked list to a Python list"""
+        result: List[int] = []
+        curr: Optional['ListNode'] = self
+        while curr:
+            result.append(curr.val)
+            curr = curr.next
+        return result
         
 class Solution:
     def removeNodes(self, head: ListNode) -> ListNode:
@@ -35,5 +46,5 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.removeNodes(ListNode(5, ListNode(2, ListNode(13, ListNode(3, ListNode(8)))))))
-    print(s.removeNodes(ListNode(1, ListNode(1, ListNode(1, ListNode(1))))))
+    print(s.removeNodes(ListNode(5, ListNode(2, ListNode(13, ListNode(3, ListNode(8)))))).to_list())
+    print(s.removeNodes(ListNode(1, ListNode(1, ListNode(1, ListNode(1))))).to_list())
