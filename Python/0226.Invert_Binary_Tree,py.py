@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
         
 class Solution(object):
-    def invertTree(self, root: TreeNode) -> TreeNode:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         def invertTreeLevel(root):
             if root != None:
                 root.right, root.left = root.left, root.right

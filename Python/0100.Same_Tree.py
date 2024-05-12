@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         # check if both trees are empty, indicating equality
         if not p and not q:
             return True

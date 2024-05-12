@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def addOneRow(self, root: TreeNode, val: int, depth: int) -> TreeNode:
+    def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
         # if the depth is 1, insert a new node with the given value as the root
         if depth == 1:
             return TreeNode(val, root, None)

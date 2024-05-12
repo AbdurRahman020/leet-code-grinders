@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def sumOfLeftLeaves(self, root: TreeNode) -> int:
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         def dfs(root:TreeNode, Left:bool) -> int:
             if not root:
                 return 0

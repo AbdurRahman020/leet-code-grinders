@@ -15,7 +15,7 @@ class ListNode:
         return result
         
 class Solution:
-    def removeNodes(self, head: ListNode) -> ListNode:
+    def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # initialize current pointer
         curr = head
         # initialize a stack to store nodes

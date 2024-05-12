@@ -1,3 +1,4 @@
+from typing import Optional
 from collections import defaultdict
 
 class TreeNode(object):
@@ -7,7 +8,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def deepestLeavesSum(self, root: TreeNode) -> int:
+    def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
         # initialize a dictionary to store the sum of node values at each depth
         leaves_sum = defaultdict(int)
         

@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
@@ -6,7 +8,7 @@ class TreeNode(object):
 
 class Codec:
 
-    def serialize(self, root: TreeNode) -> str:
+    def serialize(self, root: Optional[TreeNode]) -> str:
         # initialize an empty list to store serialized node values
         result = []
         

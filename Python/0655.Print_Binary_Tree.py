@@ -1,3 +1,5 @@
+from typing import Optional, List
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def printTree(self, root: TreeNode) -> list[list[str]]:
+    def printTree(self, root: Optional[TreeNode]) -> List[List[str]]:
         def dfs(node, count):
             if not node:
                 return count

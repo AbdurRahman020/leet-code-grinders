@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def findFarmland(self, land: list[list[int]]) -> list[list[int]]:
+    def findFarmland(self, land: List[List[int]]) -> List[List[int]]:
         row_length, col_length = len(land), len(land[0])
         coordinates = []
         visited = set()

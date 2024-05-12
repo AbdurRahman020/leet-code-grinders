@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def recoverTree(self, root: TreeNode) -> None:
+    def recoverTree(self, root: Optional[TreeNode]) -> None:
         result = []
         def Inorder(root):
             if root != None:

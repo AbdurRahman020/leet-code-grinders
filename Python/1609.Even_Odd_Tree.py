@@ -1,3 +1,4 @@
+from typing import Optional
 from collections import deque
 
 class TreeNode(object):
@@ -7,7 +8,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def isEvenOddTree(self, root: TreeNode) -> bool:
+    def isEvenOddTree(self, root: Optional[TreeNode]) -> bool:
         # if the tree is empty, it is considered an even-odd tree
         if not root:
             return True

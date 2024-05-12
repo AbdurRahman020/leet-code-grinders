@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def smallestFromLeaf(self, root: TreeNode) -> str:
+    def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
         result = []
         def dfs(root, val):
             if not root:

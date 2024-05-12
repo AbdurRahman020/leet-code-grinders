@@ -1,3 +1,4 @@
+from typing import Optional
 from collections import deque
 
 class TreeNode(object):
@@ -7,7 +8,7 @@ class TreeNode(object):
         self.right = right
         
 class Solution:
-    def findBottomLeftValue(self, root: TreeNode) -> int:
+    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         # check if the root is empty
         if not root:
             return True

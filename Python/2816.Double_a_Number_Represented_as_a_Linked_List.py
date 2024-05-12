@@ -15,7 +15,7 @@ class ListNode:
         return result
         
 class Solution:
-    def doubleIt(self, head: ListNode) -> ListNode:
+    def doubleIt(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # reverse the linked list using a stack
         stack = []
         while head:

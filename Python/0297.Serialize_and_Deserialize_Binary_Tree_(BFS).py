@@ -1,3 +1,4 @@
+from typing import Optional
 from collections import deque
 
 class TreeNode(object):
@@ -8,7 +9,7 @@ class TreeNode(object):
 
 class Codec:
 
-    def serialize(self, root: TreeNode) -> str:
+    def serialize(self, root: Optional[TreeNode]) -> str:
         # initialize an empty list to store serialized nodes
         result = []
         # initialize a deque with the root node

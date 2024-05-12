@@ -1,3 +1,5 @@
+from typing import Optional
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -5,7 +7,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def pathSum(self, root: TreeNode, targetSum: int) -> list[list[int]]:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> list[list[int]]:
         # base case: if the root is None, return an empty list
         if not root:
             return root
