@@ -10,7 +10,13 @@ class Solution:
         # depth first search (DFS) function to explore islands
         def dfs(r, c):
             # check if the current position is out of bounds or not part of an island
-            if r < 0 or r >= row_length or c < 0 or c >= col_length or grid[r][c] != '1':
+            if (
+                r < 0 
+                or r >= row_length 
+                or c < 0 
+                or c >= col_length 
+                or grid[r][c] != '1'
+            ):
                 return
             # mark the current position as visited (water)
             grid[r][c] = '0'
