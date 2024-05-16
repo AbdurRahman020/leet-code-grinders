@@ -15,7 +15,7 @@ class ListNode:
         return result
         
 class Solution:
-    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         head = ListNode()
         pos = head
         while list1 != None and list2 != None:
