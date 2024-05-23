@@ -6,13 +6,14 @@ class Solution:
         n = len(nums)
         # initialize an empty list to store subsets
         result = []
+        
         # iterate over all possible subsets using bit manipulation
         # 1<<n calculates 2^n, the number of subsets possible
         for i in range(1<<n):
             # initialize an empty subset
             subset = []
-            # iterate over each bit of the current number 'i',
-            # eeach bit represents whether the corresponding element should 
+            # iterate over each bit of the current number 'i', each
+            # bit represents whether the corresponding element should 
             # be included in the subset
             for j in range(n):
                 # check if the j-th bit of i is set
