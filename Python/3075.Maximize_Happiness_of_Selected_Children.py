@@ -4,7 +4,7 @@ class Solution:
         happiness.sort(reverse=True)
         total_happiness = 0
         
-        # tterating through the first 'k' elements of the sorted happiness array
+        # iterating through the first 'k' elements of the sorted happiness array
         for turn in range(k):
             # if the current happiness is less than the turn number, break the loop
             if happiness[turn] < turn:
