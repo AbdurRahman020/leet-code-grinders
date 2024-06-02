@@ -20,11 +20,12 @@ class Solution:
                     return False
             return True
         
-        # recursive function to solve the Sudoku puzzle
+        # recursive function to solve the sudoku puzzle
         def solve(r, c):
-            # base case: If we have reached the end of the puzzle
+            # base case: if we have reached the end of the puzzle
             if r == 9:
                 return True
+            
             # move to the next row
             if c == 9:
                 return solve(r+1, 0)
