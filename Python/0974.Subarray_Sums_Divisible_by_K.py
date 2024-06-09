@@ -7,7 +7,7 @@ class Solution:
         
         # create a dictionary to store the count of each prefix sum remainder, 
         # initialize with 0 remainder since an empty subarray has a sum divisible by k
-        prefix_map = {0: 1}
+        remainder_counts = {0: 1}
         # initialize prefix sum to 0
         prefix_sum = 0
         # initialize count of subarrays with sum divisible by k
@@ -22,13 +22,13 @@ class Solution:
             
             # if the current remainder has been seen before, increment the count
             # of subarrays with sum divisible by k
-            if remainder in prefix_map:
-                subarray_count += prefix_map[remainder]
+            if remainder in remainder_counts:
+                subarray_count += remainder_counts[remainder]
                 # update the count of subarrays with the current remainder
-                prefix_map[remainder] += 1
+                remainder_counts[remainder] += 1
             else:
-                # if the remainder is not in the prefix_map, add it with count 1
-                prefix_map[remainder] = 1
+                # if the remainder is not in the remainder_counts, add it with count 1
+                remainder_counts[remainder] = 1
                 
         # return the total count of subarrays with sum divisible by k
         return subarray_count
