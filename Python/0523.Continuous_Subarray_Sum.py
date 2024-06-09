@@ -7,14 +7,14 @@ class Solution:
         remainder_index = {0: -1}
         # variable to store cumulative sum of nums
         total_sum = 0  
-
+        
         # iterate through nums list along with index
         for i, num in enumerate(nums):
             # add the current number to total_sum
             total_sum += num
             # calculate the remainder when divided by k
             remainder = total_sum % k
-
+            
             # if the current remainder is not in the remainder_index dictionary
             if remainder not in remainder_index:
                 # store the remainder and its corresponding index
@@ -25,7 +25,7 @@ class Solution:
                 # occurrence of the same remainder is greater than 1, it means there is
                 # a subarray whose sum is divisible by k and has at least two elements
                 return True
-
+        
         # if no such subarray is found, return False
         return False
 
