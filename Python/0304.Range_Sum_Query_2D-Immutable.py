@@ -49,20 +49,19 @@ if __name__ == '__main__':
               [1, 2, 0, 1, 5],
               [4, 1, 0, 1, 7],
               [1, 0, 3, 0, 5]]
+    inputs = [matrix, [1,1,2,2], [2,1,4,3], [1,2,2,4]]
     
     obj = None
-    output = []
+    results = []
     
-    for i, command in enumerate(commands):
+    for i in range(len(commands)):
+        command = commands[i]
         if command == "NumMatrix":
             obj = NumMatrix(matrix)
-            output.append(None)
+            results.append(None)
         elif command == "sumRegion":
-            if i == 1:
-                output.append(obj.sumRegion(1, 1, 2, 2))
-            elif i == 2:
-                output.append(obj.sumRegion(2, 1, 4, 3))
-            elif i == 3:
-                output.append(obj.sumRegion(1, 2, 2, 4))
+            r1, c1, r2, c2 = inputs[i]
+            result = obj.sumRegion(r1, c1, r2, c2)
+            results.append(result)
     
-    print(output)
+    print(results)
