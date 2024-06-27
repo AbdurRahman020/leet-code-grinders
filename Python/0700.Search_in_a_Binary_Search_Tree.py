@@ -1,10 +1,35 @@
-from typing import Optional
+from typing import Optional, List
+from collections import deque
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+    
+    def serialize(self) -> List[int]:
+        """Serialize the tree into a list"""
+        result = []
+        
+        if self is None:
+            return result
+        
+        queue = deque([self])
+        
+        while queue:
+            node = queue.popleft()
+            if node:
+                result.append(node.val)
+                queue.append(node.left)
+                queue.append(node.right)
+            else:
+                result.append(None)
+        
+        # remove trailing None values
+        while result and result[-1] is None:
+            result.pop()
+        
+        return result
 
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
@@ -28,5 +53,5 @@ class Solution:
 if __name__ == '__main__':
     s = Solution()
     r = TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7))
-    print(s.searchBST(r, 2))
+    print(s.searchBST(r, 2).serialize())
     print(s.searchBST(r, 5))
