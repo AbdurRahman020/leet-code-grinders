@@ -33,6 +33,5 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    # Example usage
-    print(s.maximumImportance(5, [[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]))  # Output: 28
-    print(s.maximumImportance(5, [[0,3],[2,4],[1,3]]))  # Output: 14
+    print(s.maximumImportance(5, [[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]))
+    print(s.maximumImportance(5, [[0,3],[2,4],[1,3]]))
