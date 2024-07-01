@@ -1,7 +1,7 @@
 from typing import List
 
 class DSU:
-    def __init__(self, n):
+    def __init__(self, n: int) -> None:
         # parent array to track representatives
         self.parent = list(range(n + 1))
         # rank to optimize union by rank
@@ -9,14 +9,15 @@ class DSU:
         # count of components
         self.component_count = n
     
-    def find(self, u):
+    def find(self, u: int) -> int:
         if self.parent[u] != u:
             # recursive find and flatten path
             self.parent[u] = self.find(self.parent[u])
+        
         # return the root of the set containing u
         return self.parent[u]
-
-    def union(self, u, v):
+    
+    def union(self, u: int, v: int) -> bool:
         # find the roots of u and v
         root_u, root_v = self.find(u), self.find(v)
         
@@ -34,7 +35,7 @@ class DSU:
         
         if self.rank[root_u] == self.rank[root_v]:
             # increment rank of root_u
-            self.rank[root_u] += 1  
+            self.rank[root_u] += 1
         
         # decrease the number of components
         self.component_count -= 1
