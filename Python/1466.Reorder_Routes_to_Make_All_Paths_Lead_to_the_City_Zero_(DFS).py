@@ -3,35 +3,41 @@ from collections import defaultdict
 
 class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
-        # constructing the graph, using defaultdict to handle unseen nodes
-        graph = defaultdict(list)
-        # for each connection, adding both directions to represent undirected edges
-        # in the tuple, the second element indicates whether the edge direction needs 
-        # to be reversed
+        # create a defaultdict to store the graph where each node has a dictionary of (neighbor, direction) pairs
+        graph = defaultdict(dict)
+        
+        # populate the graph with connections, indicating the direction of each edge
         for u, v in connections:
-            graph[u].append((v, True))  # True indicates it needs to be reversed
-            graph[v].append((u, False)) # False indicates no reversal needed
+            # u -> v is a "real" edge that needs to be reordered
+            graph[u][v] = 1
+            # v -> u is a reverse edge that does not need to be reordered
+            graph[v][u] = 0
         
-        # DFS function to traverse the graph and count reversals
-        def dfs(node, visited):
-            # marking the current node as visited
-            visited.add(node)
-            # count of edges that need to be reversed
-            reversal_count = 0
-            for neighbour, to_reverse in graph[node]:
-                # if neighbour hasn't been visited yet
-                if neighbour not in visited:
-                    # increment the reversal count if needed
-                    reversal_count += to_reverse
-                    # recursively traverse the neighbour
-                    reversal_count += dfs(neighbour, visited)
+        # define a depth-first search (DFS) function to traverse the graph
+        def dfs(current_city, reorder_count):
+            # mark the current node as visited
+            visited.add(current_city)
             
-            # return the total count of reversals in the DFS traversal
-            return reversal_count
+            # traverse neighbors of the current node in the graph
+            for neighbor_city, direction in graph[current_city].items():
+                # if neighbor_city hasn't been visited, process it
+                if neighbor_city not in visited:
+                    # increment the reorder_count if the edge is a "real" edge that needs reordering
+                    if direction == 1:
+                        reorder_count[0] += 1
+                    # recursively perform DFS on the neighbor_city
+                    dfs(neighbor_city, reorder_count)
         
-        # starting DFS from node 0 and returning the total count of reversals
-        visited = set()
-        return dfs(0, visited)
+        # initialize set to track visited nodes during DFS
+        visited = set()   
+        # initialize list to store the count of edges that need to be reordered
+        reorder_count = [0]
+        
+        # perform DFS starting from node 0
+        dfs(0, reorder_count)
+        
+        # return the total count of edges that need to be reordered
+        return reorder_count[0]
 
 if __name__ == '__main__':
     s = Solution()
