@@ -21,8 +21,10 @@ class Solution:
         # initialize minimum distance between critical points to infinity
         min_distance = math.inf 
 
-        while curr.next:  # traverse the list until the second last node
-            position += 1  # increment the position counter
+        # traverse the list until the second last node
+        while curr.next:
+            # increment the position counter
+            position += 1
 
             # check if the current node is a "critical point" (local extremum)
             if (prev.val > curr.val < curr.next.val) or (
