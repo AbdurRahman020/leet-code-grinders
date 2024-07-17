@@ -33,11 +33,11 @@ class TreeNode(object):
 
 class Solution:
     def delNodes(self, root: Optional[TreeNode], to_delete: List[int]) -> List[TreeNode]:
-        # convert to_delete list to a set for O(1) average time complexity membership check
+        # convert to_delete list to a set for O(1) average time complexity check
         nodes_to_delete = set(to_delete)
         # initialize an empty list to store the resulting forest of trees
         forest = []
-
+        
         # define a function to perform depth-first search (DFS)
         def dfs(node: Optional[TreeNode], is_root: bool) -> Optional[TreeNode]:
             # base case: if node is None, return None (no action needed)
@@ -64,7 +64,6 @@ class Solution:
         
         # return the resulting forest of trees after deletion operations
         return forest
-
 
 if __name__ == '__main__':
     s = Solution()
