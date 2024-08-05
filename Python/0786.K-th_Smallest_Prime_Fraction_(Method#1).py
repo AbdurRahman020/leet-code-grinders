@@ -1,7 +1,8 @@
+from typing import List
 import heapq
 
 class Solution:
-    def kthSmallestPrimeFraction(self, arr: list[int], k: int) -> list[int]:
+    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:
         # get the length of the array
         n = len(arr)
         # create a min-heap to store fractions and their indices

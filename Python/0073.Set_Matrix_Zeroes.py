@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def setZeroes(self, matrix: list[list[int]]) -> None:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
         # get the dimensions of the matrix
         row_length, col_length = len(matrix), len(matrix[0])
         # initialize sets to store rows and columns containing zeroes

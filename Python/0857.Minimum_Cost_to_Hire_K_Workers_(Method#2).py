@@ -1,7 +1,8 @@
+from typing import List
 import heapq
 
 class Solution:
-    def mincostToHireWorkers(self, quality: list[int], wage: list[int], k: int) -> float:
+    def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
         # Sort workers based on their wage to quality ratio
         workers = sorted([(w/q, q) for w, q in zip(wage, quality)])
         # initialize a heap to keep track of the k smallest quality values

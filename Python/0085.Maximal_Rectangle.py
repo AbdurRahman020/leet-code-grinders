@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def largestRectangleArea(self, heights: list[int]) -> int:
+    def largestRectangleArea(self, heights: List[int]) -> int:
         # initialize variables to store maximum area and a stack to track heights and their indices
         max_area, stack = 0, [(0,0)]
         # add a sentinel to the end of the heights list to ensure all heights are processed

@@ -1,7 +1,8 @@
+from typing import List
 import heapq
 
 class Solution:
-    def matrixSum(self, nums: list[list[int]]) -> int:
+    def matrixSum(self, nums: List[List[int]]) -> int:
         # initialize the result variable
         result = 0
         # get the dimensions of the matrix
@@ -22,6 +23,7 @@ class Solution:
                 val = heapq.heappop(nums[r])
                 # update the maximum value of the current column
                 curr_max = max(curr_max, val)
+            
             # add the maximum value of the current column to the result
             result += curr_max
         

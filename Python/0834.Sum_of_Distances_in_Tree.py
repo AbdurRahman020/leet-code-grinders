@@ -1,7 +1,8 @@
+from typing import List
 from collections import defaultdict
 
 class Solution:
-    def sumOfDistancesInTree(self, n: int, edges: list[list[int]]) -> list[int]:
+    def sumOfDistancesInTree(self, n: int, edges: List[List[int]]) -> List[int]:
         # graph construction
         graph = defaultdict(list)
         for u, v in edges:
@@ -13,6 +14,7 @@ class Solution:
         sub_tree_sizes = [0 for _ in range(n)]
         # list to store depths of nodes
         depths = [0 for _ in range(n)]
+        
         # first Depth-First Search to calculate subtree sizes and depths
         def dfs1(parent, curr, curr_depth):
             # initializing subtree size of current node

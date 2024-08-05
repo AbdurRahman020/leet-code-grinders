@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 from collections import deque
 
 class TreeNode(object):
@@ -8,7 +8,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> list[list[int]]:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         # initialize an empty list to store the result
         result = []
         # initialize a deque for breadth-first search

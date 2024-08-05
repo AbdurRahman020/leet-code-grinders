@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def numRescueBoats(self, people: list[int], limit: int) -> int:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
         # sort the list of people in non-decreasing order of their weights
         people.sort()
         # initialize the number of boats needed
@@ -16,11 +18,13 @@ class Solution:
                 # if yes, the lightest person can be paired with the heaviest person,
                 # so move the pointer for the lightest person to the next person
                 i += 1
+            
             # move the pointer for the heaviest person to the next person
             j -= 1
             # increment the number of boats needed, as we're sending out a boat 
             # in each iteration
             num_of_boats += 1
+        
         # return the total number of boats needed
         return num_of_boats
 

@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution(object):
-    def intersection(self, nums1: list[int], nums2: list[int]) -> list[int]:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         # convert both lists to sets to find the intersection (common elements)
         # after intersection convert the result back to a list
         return list(set(nums1).intersection(set(nums2)))

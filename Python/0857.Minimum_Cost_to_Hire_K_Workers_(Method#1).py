@@ -1,7 +1,8 @@
+from typing import List
 import heapq, math
 
 class Solution:
-    def mincostToHireWorkers(self, quality: list[int], wage: list[int], k: int) -> float:
+    def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
         # initialize result to positive infinity and quality_sum to 0
         result, quality_sum = math.inf, 0
         # initialize a max heap to store the negative quality values
@@ -18,6 +19,7 @@ class Solution:
             # if the size of the heap exceeds k, remove the smallest quality value
             if len(max_heap) > k:
                 quality_sum += heapq.heappop(max_heap)
+            
             # if the size of the heap equals k, calculate the result
             if len(max_heap) == k:
                 result = min(result, quality_sum * wage_per_quality)

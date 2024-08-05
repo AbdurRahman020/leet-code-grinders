@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def lemonadeChange(self, bills: list[int]) -> bool:
+    def lemonadeChange(self, bills: List[int]) -> bool:
         # initialize variables to keep track of available change
         available_5, available_10 = 0, 0
         # iterate through each bill in the list
@@ -32,6 +34,7 @@ class Solution:
                 else:
                     # if neither condition is satisfied, return False as we can't give change
                     return False
+        
         # if all bills are successfully processed, return True
         return True
 

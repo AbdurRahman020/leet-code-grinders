@@ -1,7 +1,8 @@
+from typing import List
 import bisect
 
 class Solution:
-    def kthSmallestPrimeFraction(self, arr: list[int], k: int) -> list[int]:
+    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:
         # initialize the search space
         left, right, n = 0, 1, len(arr)
         # binary search loop

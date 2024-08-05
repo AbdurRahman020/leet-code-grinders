@@ -1,7 +1,8 @@
+from typing import List
 import heapq
 
 class Solution:
-    def matrixSum(self, nums: list[list[int]]) -> int:
+    def matrixSum(self, nums: List[List[int]]) -> int:
         # initialize the result variable
         result = 0
         # the dimensions of the matrix

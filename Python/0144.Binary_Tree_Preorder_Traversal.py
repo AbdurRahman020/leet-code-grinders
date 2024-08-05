@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> list[int]:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
         def PreOrder(root):
             if root != None:
@@ -16,6 +16,7 @@ class Solution:
                 PreOrder(root.right)
         
         PreOrder(root)
+        
         return result
 
 if __name__ == '__main__':

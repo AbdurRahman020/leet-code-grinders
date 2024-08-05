@@ -1,8 +1,9 @@
+from typing import List
 from operator import xor
 from functools import reduce
 
 class Solution:
-    def minOperations(self, nums: list[int], k: int) -> int:
+    def minOperations(self, nums: List[int], k: int) -> int:
         # calculate the XOR of all elements in 'nums'
         # using the reduce function and the xor operator
         # then calculate the XOR between the XOR result and 'k', 

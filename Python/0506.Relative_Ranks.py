@@ -1,7 +1,8 @@
+from typing import List
 import heapq
 
 class Solution:
-    def findRelativeRanks(self, score: list[int]) -> list[str]:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
         # get the length of the score list
         n = len(score)
         # create a heap to store scores along with their indices
@@ -18,11 +19,13 @@ class Solution:
         for place in range(n, 0, -1):
             # pop the score with its index from the heap
             s, i = heapq.heappop(heap)
+            
             # assign medals for top 3 scores, otherwise assign rank number
             if place <= 3:
                 rank[i] = medals[place - 1]
             else:
                 rank[i] = str(place)
+        
         return rank
     
 if __name__ == '__main__':

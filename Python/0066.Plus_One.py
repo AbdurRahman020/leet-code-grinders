@@ -1,6 +1,9 @@
+from typing import List
+
 class Solution(object):
-    def plusOne(self, digits: list[int]) -> list[int]:
+    def plusOne(self, digits: List[int]) -> List[int]:
        num = int(''.join(map(str, digits))) + 1
+       
        return [int(i) for i in str(num)]
         
 if __name__ == '__main__':

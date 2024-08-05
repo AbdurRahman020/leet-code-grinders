@@ -1,7 +1,8 @@
+from typing import List
 from collections import deque
 
 class Solution:
-    def openLock(self, deadends: list[str], target: str) -> int:
+    def openLock(self, deadends: List[str], target: str) -> int:
         # convert deadends list to a set for faster lookup
         dead_ends_set = set(deadends)
         # initialize a queue for BFS traversal
@@ -18,19 +19,23 @@ class Solution:
             # if the target state is reached, return the number of steps
             if curr_str == target:
                 return curr_steps
+            
             # skip the current state if it is in the deadends
             if curr_str in dead_ends_set:
                 continue
+            
             # explore all possible next states by changing one digit at a time
             for i in range(4):
                 digit = int(curr_str[i])
                 for j in [1, -1]:
                     new_digit = (digit + j) % 10
                     new_str = curr_str[:i] + str(new_digit) + curr_str[i+1:]
+                    
                     # if the new state is not visited, add it to the queue and mark it as visited
                     if new_str not in visited:
                         visited.add(new_str)
                         queue.append((new_str, curr_steps+1))
+        
         # if the target state cannot be reached, return -1
         return -1
 

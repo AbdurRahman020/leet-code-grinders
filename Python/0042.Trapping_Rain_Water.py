@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def trap(self, height: list[int]) -> int:
+    def trap(self, height: List[int]) -> int:
         if not height:
             return 0
         

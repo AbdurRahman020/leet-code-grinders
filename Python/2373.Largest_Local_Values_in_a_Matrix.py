@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def largestLocal(self, grid: list[list[int]]) -> list[list[int]]:
+    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
         # get the size of the grid
         n = len(grid)
         # initialize the result grid with appropriate dimensions
@@ -10,6 +12,7 @@ class Solution:
             for c in range(n-2):
                 # find the maximum value in the 3x3 subgrid starting at (r,c)
                 result[r][c] = max(grid[i][j] for i in range(r, r+3) for j in range(c, c+3))
+        
         return result
 
 if __name__ == '__main__':

@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def maximumHappinessSum(self, happiness: list[int], k: int) -> int:
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
         # sorting the happiness array in descending order
         happiness.sort(reverse=True)
         total_happiness = 0
@@ -9,6 +11,7 @@ class Solution:
             # if the current happiness is less than the turn number, break the loop
             if happiness[turn] < turn:
                 break
+            
             # calculate the total happiness by subtracting the turn number from the current happiness
             total_happiness += (happiness[turn] - turn)
         

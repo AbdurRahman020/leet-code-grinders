@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def largestPerimeter(self, nums: list[int]) -> int:
+    def largestPerimeter(self, nums: List[int]) -> int:
         # get the length of the input list
         n = len(nums)
         # sort the list in descending order

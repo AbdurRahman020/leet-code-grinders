@@ -1,7 +1,8 @@
+from typing import List
 from collections import deque
 
 class Solution:
-    def deckRevealedIncreasing(self, deck: list[int]) -> list[int]:
+    def deckRevealedIncreasing(self, deck: List[int]) -> List[int]:
         # sort the deck in descending order
         deck_reverse = sorted(deck, reverse=True)
         # create a deque to store the new deck
@@ -12,6 +13,7 @@ class Solution:
             # if the new deck has more than one card, rotate it to the right by 1 position
             if len(new_deck) > 1:
                 new_deck.rotate(1)
+            
             # add the current card to the left end of the new deck
             new_deck.appendleft(card)
         

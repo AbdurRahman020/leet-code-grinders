@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def permute(self, nums: list[int]) -> list[list[int]]:
+    def permute(self, nums: List[int]) -> List[List[int]]:
         result = []
         def backtrack(nums, curr_per):
             if not nums:

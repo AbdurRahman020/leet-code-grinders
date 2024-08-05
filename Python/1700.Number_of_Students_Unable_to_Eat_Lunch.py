@@ -1,12 +1,14 @@
+from typing import List
 from collections import deque
 
 class Solution:
-    def countStudents(self, students: list[int], sandwiches: list[int]) -> int:
+    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
         student_Queue = deque(students)
         sandwich_Stack = []
         
         for sandwich in reversed(sandwiches):
             sandwich_Stack.append(sandwich)
+        
         served = 0
         
         while student_Queue and served < len(student_Queue):

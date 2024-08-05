@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution:
-    def postorderTraversal(self, root: Optional[TreeNode]) -> list[int]:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
         def PostOrder(root):
             if root != None:
@@ -16,6 +16,7 @@ class Solution:
                 result.append(root.val)
         
         PostOrder(root)
+        
         return result
 
 if __name__ == '__main__':

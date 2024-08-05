@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def findMaxK(self, nums: list[int]) -> int:
+    def findMaxK(self, nums: List[int]) -> int:
         # sort the input list
         nums.sort()
         # initialize two pointers, i and j, at the beginning and end of the list respectively
@@ -15,6 +17,7 @@ class Solution:
             # if the sum is greater than 0, move pointer j to the left
             else:
                 j -= 1
+        
         # if no such element is found, return -1
         return -1
 

@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -7,12 +7,13 @@ class TreeNode(object):
         self.right = right
         
 class Solution(object):
-    def binaryTreePaths(self, root: Optional[TreeNode]) -> list[str]:
+    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
         result = []
         
         def dfs(root, path):
             if root == None:
                 return []
+            
             if root.left == None and root.right == None:
                 return result.append(''.join(path) + str(root.val))
             
@@ -22,6 +23,7 @@ class Solution(object):
             path.pop()
 
         dfs(root, [])
+        
         return result
 
 if __name__ == '__main__':

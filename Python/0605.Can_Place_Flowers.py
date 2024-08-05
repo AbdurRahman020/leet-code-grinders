@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         # initialize count to keep track of available spots for planting flowers
         count, prev_flower = 0, 0
         

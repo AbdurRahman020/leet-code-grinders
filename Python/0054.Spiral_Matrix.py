@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         # get the dimention of matrix
         row_length, col_length = len(matrix), len(matrix[0])
         # initialize variables to track boundaries
