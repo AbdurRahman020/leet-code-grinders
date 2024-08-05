@@ -1,7 +1,8 @@
-class Solution(object):
+class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         new_str = s.strip()
         x = new_str.split(" ")
+        
         return len(x[-1]) 
 
 if __name__ == '__main__':

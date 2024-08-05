@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         # check if the string is present in itself concatenated with itself, 
         # excluding the first and last character
