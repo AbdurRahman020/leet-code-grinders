@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution(object):
-    def inorderTraversal(self, root: Optional[TreeNode]) -> list[int]: 
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]: 
         result = []
         def Inorder(root):
             if root != None:
@@ -20,11 +20,9 @@ class Solution(object):
     
 if __name__ == '__main__':
     s = Solution()
-    
     r1 = TreeNode(1, None, TreeNode(2, TreeNode(3)))
-    r2 = TreeNode(1)
-    r3 = None
-    
     print(s.inorderTraversal(r1))
+    r2 = TreeNode(1)
     print(s.inorderTraversal(r2))
+    r3 = None
     print(s.inorderTraversal(r3))
