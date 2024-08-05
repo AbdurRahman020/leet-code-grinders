@@ -1,10 +1,35 @@
-from typing import Optional
+from typing import List, Optional
+from collections import deque
 
-class TreeNode(object):
+class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+    
+    def serialize(self) -> List[int]:
+        """Serialize the tree into a list"""
+        result = []
+        
+        if self is None:
+            return result
+        
+        queue = deque([self])
+        
+        while queue:
+            node = queue.popleft()
+            if node:
+                result.append(node.val)
+                queue.append(node.left)
+                queue.append(node.right)
+            else:
+                result.append(None)
+        
+        # remove trailing None values
+        while result and result[-1] is None:
+            result.pop()
+        
+        return result
 
 class Solution:
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
@@ -42,6 +67,6 @@ class Solution:
 if __name__ == '__main__':
     s = Solution()
     r = TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(6, None, TreeNode(7)))
-    print(s.deleteNode(r, 3))
-    print(s.deleteNode(r, 0))
+    print(s.deleteNode(r, 3).serialize())
+    print(s.deleteNode(r, 0).serialize())
     print(s.deleteNode(None, 0))
