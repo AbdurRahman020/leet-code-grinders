@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -8,18 +8,31 @@ class TreeNode(object):
 
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        def dfs(root, leaf):
+        # helper function to perform depth-first search (DFS) and collect leaf node values
+        def dfs(root: Optional[TreeNode], leaf: List[int]) -> None:
+            # base case: # if the current node is None, return
             if not root:
                 return
+            
+            # if the current node is a leaf node (no left and right children), add 
+            # its value to the leaf list
             if not root.left and not root.right:
                 leaf.append(root.val)
+            
+            # recursively perform DFS on the left subtree
             dfs(root.left, leaf)
+            # recursively perform DFS on the right subtree
             dfs(root.right, leaf)
-
+        
+        # lists to store the leaf values of the two trees
         leaf1, leaf2 = [], []
+        
+        # perform DFS on the first tree and collect its leaf values
         dfs(root1, leaf1)
+        # perform DFS on the second tree and collect its leaf values
         dfs(root2, leaf2)
         
+        # compare the leaf sequences of the two trees
         return leaf1 == leaf2
 
 if __name__ == '__main__':
