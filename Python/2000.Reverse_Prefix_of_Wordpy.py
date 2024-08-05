@@ -2,6 +2,7 @@ class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
         # initialize two pointers, i and j, to 0
         i, j = 0, 0
+        
         # iterate through the characters of the word
         for index, char in enumerate(word):
             # if the current character matches the target character 'ch'
@@ -23,6 +24,7 @@ class Solution:
             # move 'i' towards the end and 'j' towards the beginning
             i += 1
             j -= 1
+        
         # convert the list back to a string and return
         return ''.join(result)
 

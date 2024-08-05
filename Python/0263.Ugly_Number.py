@@ -12,6 +12,7 @@ class Solution(object):
                 n = n//5
             else:
                 return False
+        
         if n == 1: 
             return True
         

@@ -5,6 +5,7 @@ class Solution:
         for days in range(1, n+1):
             total_balance += (weeks + day)
             day += 1
+            
             if days%7 == 0:
                 weeks += 1
                 day = 1

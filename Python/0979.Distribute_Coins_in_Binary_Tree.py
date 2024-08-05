@@ -28,6 +28,7 @@ class Solution:
         
         # call the dfs function starting from the root of the tree
         _ , moves = dfs(root)
+        
         # return the total moves required for the entire tree
         return moves
 

@@ -18,9 +18,11 @@ class Solution:
             # check if the tag name is empty or too long
             if not tag_Name or len(tag_Name) > 9:
                 return False
+            
             # check if all characters in the tag name are uppercase
             if any(not ch.isupper() for ch in tag_Name):
                 return False
+            
             # if the tag isn't end tag, validate it against the last opened tag in the stack
             if isEndTag:
                 # check if there's an open tag in the stack
@@ -44,6 +46,7 @@ class Solution:
                 if tag_Stack and code[i+1] == '!':
                     # find the closing marker for the CDATA section
                     close_Index = code.find(']]>', i+2)
+                    
                     # if CDATA section is invalid, return False
                     if close_Index == -1 or not isValid_CDATA(code[i+2:close_Index]):
                         return False
@@ -61,10 +64,13 @@ class Solution:
                     # if start tag is invalid, return False
                     if close_Index == -1 or not isValid_TagName(code[i+1:close_Index], False):
                         return False
+                
                 # move the pointer to after the current tag
                 i = close_Index
+            
             # move to the next character
             i += 1
+        
         # after parsing all tags, if there are still open tags or no tags were found, it's invalid    
         return not tag_Stack and contains_Tag
 

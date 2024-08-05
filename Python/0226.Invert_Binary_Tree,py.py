@@ -40,6 +40,7 @@ class Solution(object):
                 invertTreeLevel(root.right)
         
         invertTreeLevel(root)
+        
         return root
 
 if __name__ == '__main__':
