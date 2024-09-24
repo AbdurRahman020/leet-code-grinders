@@ -33,14 +33,16 @@ class TreeNode(object):
         
 class Solution(object):
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        def invertTreeLevel(root):
-            if root != None:
-                root.right, root.left = root.left, root.right
-                invertTreeLevel(root.left)
-                invertTreeLevel(root.right)
+        # check if the current node is not None
+        if root != None:
+            # swap the left and right children of the current node
+            root.right, root.left = root.left, root.right
+            # recursively invert the left subtree
+            self.invertTree(root.left)
+            # recursively invert the right subtree
+            self.invertTree(root.right)
         
-        invertTreeLevel(root)
-        
+        # return the root of the inverted tree
         return root
 
 if __name__ == '__main__':
