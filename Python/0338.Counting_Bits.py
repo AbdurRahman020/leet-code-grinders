@@ -2,7 +2,7 @@ class Solution:
     def countBits(self, n: int) -> list[int]:
         # initialize an empty list to store the count of bits for each number from 0 to n
         counter = [0]
-        
+
         # loop through each number from 1 to n
         for i in range(1, n+1):
             # to count the number of 1s in the binary representation of `i`, we use:
@@ -16,13 +16,15 @@ class Solution:
             #
             # therefore, counter[i >> 1] + i % 2 gives us the count of 1s in the binary
             # representation of i and we append this count to the `counter` list
-            counter.append(counter[i>>1] + i%2)
-        
+            counter.append(counter[i >> 1] + i % 2)
+
         # return the list containing the count of bits for each number from 0 to n
         return counter
 
+
 if __name__ == '__main__':
     s = Solution()
+
     print(s.countBits(5))
     print(s.countBits(9))
     print(s.countBits(2))

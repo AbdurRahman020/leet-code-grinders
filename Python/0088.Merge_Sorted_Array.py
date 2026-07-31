@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         # initialize i to point to the last element of nums1 (excluding the zeros)
@@ -23,12 +24,13 @@ class Solution:
                 nums1[k] = nums2[j]
                 # move the pointer j left to the next element in nums2
                 j -= 1
-            
+
             # move the pointer k left to the next position for the next insertion
             k -= 1
 
+
 if __name__ == '__main__':
     s = Solution()
-    n1 = [1,2,3,0,0,0]
-    s.merge(n1, 3, [2,5,6], 3)
+    n1 = [1, 2, 3, 0, 0, 0]
+    s.merge(n1, 3, [2, 5, 6], 3)
     print(n1)

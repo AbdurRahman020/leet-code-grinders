@@ -1,7 +1,23 @@
 from typing import List
 
 class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    def productExceptSelf1(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        prod_arr = [1] * n
+        
+        prefix_prod = 1
+        for i in range(n):
+            prod_arr[i] = prefix_prod
+            prefix_prod *= nums[i]
+        
+        suffix_prod = 1
+        for j in range(n-1, -1, -1):
+            prod_arr[j] *= suffix_prod
+            suffix_prod *= nums[j]
+        
+        return prod_arr
+        
+    def productExceptSelf2(self, nums: List[int]) -> List[int]:
         # get the length of list 
         n = len(nums)
         
@@ -30,5 +46,9 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.productExceptSelf([1,2,3,4]))
-    print(s.productExceptSelf([-1,1,0,-3,3]))
+    
+    print(s.productExceptSelf1([1,2,3,4]))
+    print(s.productExceptSelf1([-1,1,0,-3,3]))
+    
+    print(s.productExceptSelf2([1,2,3,4]))
+    print(s.productExceptSelf2([-1,1,0,-3,3]))

@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution():
     def findTheDifference(self, s: str, t: str) -> str:
         # initialize a variable to store the difference in ASCII values
         string = 0

@@ -1,10 +1,11 @@
 from typing import List
 
+
 class Solution:
     def validUtf8(self, data: List[int]) -> bool:
         # initialize a count to keep track of the number of expected bytes
         count = 0
-        
+
         # iterate through each byte in the data
         for byte in data:
             # if count is 0, it means we are at the beginning of a new character
@@ -30,12 +31,14 @@ class Solution:
                     return False
                 # decrease the count as we consume bytes of the multi-byte character
                 count -= 1
-        
+
         # if count is 0 at the end, it means all multi-byte characters were properly
         # terminated, and there were no incomplete characters
         return count == 0
 
+
 if __name__ == '__main__':
     s = Solution()
-    print(s.validUtf8([197,130,1]))
-    print(s.validUtf8([235,140,4]))
+
+    print(s.validUtf8([197, 130, 1]))
+    print(s.validUtf8([235, 140, 4]))

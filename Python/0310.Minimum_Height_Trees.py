@@ -1,6 +1,7 @@
 from typing import List
 from collections import defaultdict, deque
 
+
 class Solution:
     def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
         if n == 1:
@@ -23,10 +24,12 @@ class Solution:
 
                 if len(graph[neighbor]) == 1:
                     leaves.append(neighbor)
-        
+
         return list(leaves)
+
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.findMinHeightTrees(4, [[1,0],[1,2],[1,3]]))
-    print(s.findMinHeightTrees(6, [[3,0],[3,1],[3,2],[3,4],[5,4]]))
+
+    print(s.findMinHeightTrees(4, [[1, 0], [1, 2], [1, 3]]))
+    print(s.findMinHeightTrees(6, [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]))

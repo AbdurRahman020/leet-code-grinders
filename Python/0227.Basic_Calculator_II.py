@@ -1,10 +1,11 @@
 import math
 
+
 class Solution:
     def calculate(self, s: str) -> int:
         # initialize stack, num, and sign
         stack, num, sign = [], 0, '+'
-        
+
         # iterate through the string with an extra '+' at the end
         for ch in s + '+':
             # if the character is a digit, update num
@@ -27,9 +28,10 @@ class Solution:
                 # update sign and reset num
                 sign = ch
                 num = 0
-        
-        # return the sum of the stack elements, which represent the final result 
+
+        # return the sum of the stack elements, which represent the final result
         return sum(stack)
+
 
 if __name__ == '__main__':
     s = Solution()

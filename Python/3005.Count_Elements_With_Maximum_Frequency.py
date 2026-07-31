@@ -1,7 +1,7 @@
 from typing import List
 from collections import Counter
 
-class Solution(object):
+class Solution():
     def maxFrequencyElements(self, nums: List[int]) -> int:
         # count the occurrences of each number in the list
         x = Counter(nums)
@@ -14,16 +14,16 @@ class Solution(object):
             max_frq = max(max_frq, x[i])
         
         # initialize a variable to store the sum of elements with maximum frequency
-        sum = 0
+        max_freq_sum = 0
         # loop through the Counter object again
         for i in x:
             # if the frequency of the current element is equal to the maximum frequency
             if x[i] == max_frq:
                 # add the frequency of that element to the sum
-                sum += x[i]
+                max_freq_sum += x[i]
         
         # return the sum of elements with maximum frequency
-        return sum
+        return max_freq_sum
     
 if __name__ == '__main__':
     s = Solution()
